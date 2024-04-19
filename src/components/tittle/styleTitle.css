@@ -1,0 +1,6 @@
+.title {
+  color: #535353;
+  font-size: 40px;
+  font-weight: bold;
+  filter: drop-shadow(-10px 2px 8px rgba(175, 175, 175, 0.7));
+}
