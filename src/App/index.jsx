@@ -1,10 +1,11 @@
 import { useState } from "react";
-import TodoItem from "./components/items/TodoItem";
-import TodoSearch from "./components/search/TodoSearch";
-import TodoCounter from "./components/counter/TodoCounter";
-import TodoList from "./components/list/TodoList";
-import CreateTodoButton from "./components/button/CreateTodoButton";
-import Title from "./components/tittle/Title";
+import useLocalStorage from "./useLocarStorage";
+import TodoItem from "../components/items/TodoItem";
+import TodoSearch from "../components/search/TodoSearch";
+import TodoCounter from "../components/counter/TodoCounter";
+import TodoList from "../components/list/TodoList";
+import CreateTodoButton from "../components/button/CreateTodoButton";
+import Title from "../components/tittle/Title";
 
 // const defaultTodos = [
 //   { text: "Sacar a mateo", completed: true },
@@ -14,30 +15,6 @@ import Title from "./components/tittle/Title";
 // ];
 
 // localStorage.setItem('APP_V1', defaultTodos)
-
-const useLocalStorage = (itemName, initialValue) => {
-  const localStorageItems = localStorage.getItem(itemName); // Mustra el valor del locarStorage APP_V1: '[{OBJECT}{OBJECT}]'
-
-  let parsedItem;
-
-  if (!localStorageItems) {
-    localStorage.setItem(itemName, JSON.stringify(initialValue));
-    parsedItem = initialValue;
-  } else {
-    parsedItem = JSON.parse(localStorageItems);
-  }
-
-  const [items, setItems] = useState(parsedItem);
-
-  const updateLocalAndState = (newItem) => {
-    // va a recibir nuevos todos, los guarda en el estado y en el localStorage
-    localStorage.setItem(itemName, JSON.stringify(newItem)); // Modificamos el localStorage pasandole como key'APP_V1' y el value tiene que ser las 'newTodos'
-
-    setItems(newItem); // luego con la funcion modificadora del estado le pasamos esos newTodos
-  };
-
-  return [items, updateLocalAndState];
-};
 
 const App = () => {
   const [todoUsers, updateLocalAndState] = useLocalStorage("APP_V1", []);
