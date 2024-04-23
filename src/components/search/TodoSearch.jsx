@@ -1,10 +1,14 @@
+import { useContext } from "react";
+import { TodoContext } from "../../context/TodoProvider";
 import "./styleSearch.css";
 
 // eslint-disable-next-line react/prop-types
-const TodoSearch = ({ handleInputChange, input }) => {
+const TodoSearch = () => {
+
+  const {input, handleInputChange} = useContext(TodoContext);
+
   return (
-    <>
-      <div>
+        <div>
         <input
           type="text"
           placeholder="Busca Tarea"
@@ -13,7 +17,6 @@ const TodoSearch = ({ handleInputChange, input }) => {
           onChange={handleInputChange} // manejador de cambio del input
         />
       </div>
-    </>
   );
 };
 
