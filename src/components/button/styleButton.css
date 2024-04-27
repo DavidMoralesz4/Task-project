@@ -1,6 +1,11 @@
 .add {
   cursor: pointer;
   filter: drop-shadow(-2px 2px 10px rgba(145, 145, 145, 0.7));
+  height: 60px;
+  width: 60px;
+  border-radius: 100px;
+  background: #095364;
+  color: #ebebeb;
 }
 
 .add {
