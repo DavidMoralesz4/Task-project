@@ -9,11 +9,14 @@ import TodosErrors from "../components/errors/TodosErrors";
 import EmptyTodos from "../components/Empty/EmptyTodos";
 import { TodoContext } from "../context/TodoProvider";
 import { useContext } from "react";
+import Modal from "../components/Modal/Modal";
+import Form from "../components/formModal/Form";
 
 const AppUI = () => {
-  const { loading, error, todosFiltered, todoChecking, todoDeleted } = useContext(TodoContext);
+  const { loading, error, todosFiltered, todoChecking, todoDeleted, openModal } = useContext(TodoContext);
 
   return (
+    <>
     <div>
       <div className="app">
         <Title />
@@ -41,8 +44,14 @@ const AppUI = () => {
           </TodoList>
         </div>
         <CreateTodoButton />
+        {openModal && (
+          <Modal>
+            <Form/>
+          </Modal>
+        )}
       </div>
     </div>
+    </>
   );
 };
 

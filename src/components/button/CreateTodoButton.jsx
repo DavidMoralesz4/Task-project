@@ -1,11 +1,14 @@
+import { useContext } from "react";
 import "./styleButton.css";
+import { TodoContext } from "../../context/TodoProvider";
 
 const CreateTodoButton = () => {
   
+  const {setOpenModal} = useContext(TodoContext)
   
   return (
     <>
-      <span onClick={() => console.log('Hiciste click en el boton!')}>
+      <span onClick={() => setOpenModal(true)}>
         <img src="./public/add.png" alt="addButton" className="add" />
       </span>
     </>

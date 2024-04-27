@@ -13,6 +13,7 @@ const TodoProvider = ({ children }) => {
     error,
   } = useLocalStorage("APP_V1", []);
   const [input, setInput] = useState("");
+  const [openModal, setOpenModal] = useState(false);
 
   const handleInputChange = (event) => {
     setInput(event.target.value);
@@ -25,6 +26,11 @@ const TodoProvider = ({ children }) => {
 
     return textTodos.includes(inputSearch); // busca si en en los textos incluye mi busqueda
   });
+
+
+  const onClose = () => {
+    setOpenModal(false)
+  }
 
   const complet = todoUsers.filter((todo) => !!todo.completed).length; //los '!!' son para trabajar con booleans
 
@@ -61,6 +67,9 @@ const TodoProvider = ({ children }) => {
         todosFiltered,
         complet,
         pending,
+        openModal,
+        setOpenModal,
+        onClose
       }}
     >
       {children}
