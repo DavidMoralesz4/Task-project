@@ -1,13 +1,6 @@
 .modal {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    width: 500px;
-    background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
-  padding: 20px;
+
+
  /* Altura máxima del modal */
 }
 
@@ -21,4 +14,5 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
 }

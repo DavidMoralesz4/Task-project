@@ -29,7 +29,19 @@ const TodoProvider = ({ children }) => {
 
 
   const onClose = () => {
+    
     setOpenModal(false)
+  }
+
+  const addTodo = (text) => {
+
+    const newTodos = [...todoUsers];
+    newTodos.push({
+      text,
+      completed: false
+    })
+  
+    updateLocalAndState(newTodos)
   }
 
   const complet = todoUsers.filter((todo) => !!todo.completed).length; //los '!!' son para trabajar con booleans
@@ -69,7 +81,8 @@ const TodoProvider = ({ children }) => {
         pending,
         openModal,
         setOpenModal,
-        onClose
+        onClose,
+        addTodo
       }}
     >
       {children}

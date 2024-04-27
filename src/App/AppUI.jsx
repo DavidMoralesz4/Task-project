@@ -17,7 +17,7 @@ const AppUI = () => {
 
   return (
     <>
-    <div>
+    <div className="father">
       <div className="app">
         <Title />
         <TodoCounter />

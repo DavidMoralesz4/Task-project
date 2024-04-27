@@ -9,4 +9,53 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #EBEBEB;
+    padding: 53px;
+    border-radius: 8px;
+    width: auto;
+    position: fixed;
+    gap: 5px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+
+}
+
+.input {
+    border-radius: 20px;
+    width: 200px;
+    height: 40px;
+    padding-left: 10px;
+    outline: 2px;
+    border: 0;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    font-size: 15px;
+}
+
+.create-button {
+    width: 80px;
+    border-radius: 20px;
+    border: 0;
+    height: 40px;
+    background-color: #095364;
+    color: white;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    position: relative;
+    top: 20px;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.titleCreate {
+    font-size: 23px;
+    color: #535353;
+}
+
+.container3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 15px;
 }
